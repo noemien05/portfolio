@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Noémie | Data & Analytics</title>
+  <meta name="description" content="Portfolio de Noémie, étudiante ingénieure informatique à l’EFREI, intéressée par la Data & Analytics." />
+  <style>
+    :root{
+  --bg:#f5f7fb;
+  --card:#ffffff;
+  --text:#0f172a;
+  --muted:#475569;
+  --line:rgba(15,23,42,.10);
+  --accent:#2563eb;
+  --accent2:#38bdf8;
+  --chip:#eef2ff;
+  --shadow: 0 10px 30px rgba(15,23,42,.08);
+  --radius: 18px;
+  --max: 1040px;
+}
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+  radial-gradient(900px 500px at 10% 10%, rgba(37,99,235,.08), transparent 60%),
+  radial-gradient(900px 500px at 90% 20%, rgba(56,189,248,.06), transparent 55%),
+  var(--bg);
+
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{color:var(--text); text-decoration:none}
+    a:hover{color:var(--accent2)}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 60px}
+    header{
+      position:sticky; top:0;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(11,18,32,.85), rgba(11,18,32,.55));
+      border-bottom:1px solid var(--line);
+      z-index:10;
+    }
+    .nav{
+      max-width:var(--max); margin:0 auto; padding:14px 18px;
+      display:flex; align-items:center; gap:14px; justify-content:space-between;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:800; letter-spacing:.2px;
+    }
+    .dot{
+      width:12px; height:12px; border-radius:999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 4px rgba(122,162,255,.15);
+    }
+    .navlinks{display:flex; gap:14px; flex-wrap:wrap}
+    .navlinks a{
+      color:var(--muted);
+      font-size:14px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid transparent;
+    }
+    .navlinks a:hover{
+      color:var(--text);
+      border-color: var(--line);
+      background: rgba(255,255,255,.03);
+    }
+
+    .hero{padding:28px 0 8px}
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    @media (max-width: 880px){
+      .hero-grid{grid-template-columns:1fr}
+    }
+
+  .card{
+  background: var(--card);
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+    .card.pad{padding:22px}
+    h1{margin:0 0 6px; font-size:40px; line-height:1.08}
+    @media (max-width: 520px){ h1{font-size:32px} }
+    .subtitle{color:var(--muted); font-size:16px; margin:0 0 16px}
+    .badges{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+    .chip{
+  background: var(--chip);
+  border:1px solid var(--line);
+  color:var(--text);
+  padding:8px 12px;
+  border-radius:999px;
+  font-size:13px;
+}
+
+    .chip span{color:var(--muted)}
+    .cta{
+      display:flex; gap:10px; flex-wrap:wrap; margin-top:18px
+    }
+    .btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 14px;
+  border-radius:12px;
+  border:1px solid var(--line);
+  background:#ffffff;
+  color:var(--text);
+  font-weight:600;
+  font-size:14px;
+  gap:8px;
+}
+
+.btn:hover{
+  border-color: var(--accent);
+  background:#f8fafc;
+}
+
+.btn.primary{
+  background: linear-gradient(135deg, #2563eb, #38bdf8);
+  color:white;
+  border:none;
+}
+
+    section{scroll-margin-top:86px; margin-top:18px}
+    .section-title{
+      display:flex; align-items:center; justify-content:space-between;
+      margin:0 0 10px;
+    }
+    .section-title h2{margin:0; font-size:18px; letter-spacing:.3px}
+    .muted{color:var(--muted)}
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
+    }
+    .col-6{grid-column: span 6}
+    .col-4{grid-column: span 4}
+    .col-12{grid-column: span 12}
+    @media (max-width: 880px){
+      .col-6,.col-4{grid-column:span 12}
+    }
+    .list{margin:10px 0 0; padding-left:18px; color:var(--muted)}
+    .list li{margin:6px 0}
+
+    .kpi{
+      display:flex; gap:12px; flex-wrap:wrap; margin-top:14px
+    }
+    .pill{
+      border:1px solid var(--line);
+      border-radius: 14px;
+      padding:10px 12px;
+      background: rgba(255,255,255,.02);
+      min-width: 140px;
+    }
+    .pill b{display:block; font-size:14px}
+    .pill span{display:block; color:var(--muted); font-size:13px; margin-top:2px}
+
+    footer{
+      margin-top:26px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:13px;
+      display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
+    }
+    .small{font-size:12px; color:var(--muted)}
+    .hr{height:1px; background:var(--line); margin:12px 0}
+    .tagrow{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
+    .tag{
+  font-size:12px;
+  color:var(--muted);
+  border:1px solid var(--line);
+  background:#f8fafc;
+  padding:6px 10px;
+  border-radius:999px;
+}
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>Noémie</span>
+      </div>
+      <nav class="navlinks" aria-label="Navigation">
+        <a href="#apropos">À propos</a>
+        <a href="#competences">Compétences</a>
+        <a href="#projets">Projets</a>
+        <a href="#experience">Expérience</a>
+        <a href="#formation">Formation</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="hero">
+      <div class="hero-grid">
+        <div class="card pad">
+          <h1>Noémie</h1>
+          <p class="subtitle">
+            Étudiante ingénieure informatique (EFREI) — <b>Data & Analytics</b>
+          </p>
+
+          <div class="badges">
+            <div class="chip">📍 <span>Paris / Île-de-France</span></div>
+            <div class="chip">🎯 <span>Alternance — Analyse de données</span></div>
+            <div class="chip">🧠 <span>SQL • Python • Excel</span></div>
+          </div>
+
+          <div class="cta">
+            <!-- Remplace les # par tes vrais liens -->
+            <a class="btn primary" href="#contact">✉️ Me contacter</a>
+            <a class="btn" href="file:///C:/Users/noemi/OneDrive/Documents/cours/CV-NoemieNiangData.pdf" target="_blank" rel="noreferrer">📄 CV (PDF)</a>
+          </div>
+
+          <div class="hr"></div>
+
+          <p class="muted" style="margin:0">
+            Intéressée par l’analyse de données et la data appliquée au business. Je développe mes compétences via
+            des projets académiques (data analysis, structuration de données, aide à la décision) et je recherche
+            une alternance en analyse de données.
+          </p>
+        </div>
+
+       <div class="card pad">
+  <div style="display:flex; flex-direction:column; align-items:center; gap:16px;">
+
+    <!-- PHOTO -->
+    <img
+      src="assets/truc.jpg"
+      alt="Photo de Noémie"
+      style="
+        width:200px;
+        height:200px;
+        object-fit:cover;
+        border-radius:50%;
+        border:3px solid rgba(122,162,255,0.4);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      "
+    />
+
+    <!-- FOCUS -->
+    <div style="width:100%;">
+      <div class="section-title">
+        <h2>Focus</h2>
+        <span class="small">Ce que je cherche</span>
+      </div>
+
+      <div class="kpi">
+        <div class="pill">
+          <b>Postes</b>
+          <span>Data Analyst (alternance)</span>
+        </div>
+        <div class="pill">
+          <b>Domaines</b>
+          <span>Business • Produit • Marketing data</span>
+        </div>
+        <div class="pill">
+          <b>Localisation</b>
+          <span>Paris + Lille/Rouen/Nantes</span>
+        </div>
+      </div>
+
+      <div class="tagrow">
+        <span class="tag">Analyse</span>
+        <span class="tag">Reporting</span>
+        <span class="tag">Aide à la décision</span>
+        <span class="tag">Data cleaning</span>
+        <span class="tag">Tableaux de bord</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <section id="apropos">
+      <div class="section-title"><h2>À propos</h2></div>
+      <div class="card pad">
+        <p class="muted" style="margin:0">
+          Étudiante en cycle ingénieur informatique à l’EFREI, intéressée par l’analyse de données et la data appliquée
+          au business. J’aime transformer des informations brutes en résultats compréhensibles et utiles pour la décision.
+        </p>
+      </div>
+    </section>
+
+    <section id="competences">
+      <div class="section-title"><h2>Compétences</h2></div>
+      <div class="grid">
+        <div class="card pad col-6">
+          <b>Data & Analyse (académique)</b>
+          <ul class="list">
+            <li>Analyse et interprétation de jeux de données</li>
+            <li>Structuration, nettoyage et préparation des données</li>
+            <li>Restitution des résultats (synthèse, recommandations)</li>
+          </ul>
+        </div>
+
+        <div class="card pad col-6">
+          <b>Outils & langages</b>
+          <ul class="list">
+            <li>Python (Pandas — bases de data analysis)</li>
+            <li>SQL (requêtes, jointures, agrégations)</li>
+            <li>Excel (formules, tableaux croisés)</li>
+          </ul>
+        </div>
+
+        <div class="card pad col-12">
+          <b>Soft skills</b>
+          <div class="tagrow">
+            <span class="tag">Rigueur</span>
+            <span class="tag">Esprit analytique</span>
+            <span class="tag">Communication claire</span>
+            <span class="tag">Autonomie</span>
+            <span class="tag">Travail en équipe</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section id="projets">
+  <div class="section-title"><h2>Projets</h2><span class="small">Sélection</span></div>
+
+  <div class="grid">
+    <article class="card pad col-6">
+      <b>Analyse de données — Régression logistique</b>
+      <ul class="list">
+        <li>Analyse de données clients (cadre académique)</li>
+        <li>Interprétation des résultats et restitution synthétique</li>
+        <li>Objectif : aide à la prise de décision</li>
+      </ul>
+      <div class="tagrow">
+        <span class="tag">Python</span><span class="tag">Analyse</span><span class="tag">Modélisation</span>
+      </div>
+    </article>
+
+    <article class="card pad col-6">
+      <b>Base de données SQL — Gestion de cantine</b>
+      <ul class="list">
+        <li>Conception d’une base de données relationnelle pour la gestion d’une cantine</li>
+        <li>Rédaction de requêtes SQL pour l’analyse et le suivi d’indicateurs</li>
+        <li>Structuration des données (tables, relations) et exploitation via requêtes</li>
+      </ul>
+      <div class="tagrow">
+        <span class="tag">SQL</span><span class="tag">Base relationnelle</span><span class="tag">Indicateurs</span>
+      </div>
+    </article>
+
+    <article class="card pad col-6">
+      <b>TriftHunt — Projet data</b>
+      <ul class="list">
+        <li>Structuration et exploitation de données</li>
+        <li>Organisation de l’information et logique d’analyse</li>
+        <li>Restitution des résultats sous forme exploitable</li>
+      </ul>
+      <div class="tagrow">
+        <span class="tag">Data</span><span class="tag">Structuration</span><span class="tag">Business</span>
+      </div>
+    </article>
+
+    <article class="card pad col-6">
+      <b>Chatbot (initiation NLP)</b>
+      <ul class="list">
+        <li>Traitement et analyse de données textuelles</li>
+        <li>Découverte des usages de l’IA appliquée à la data</li>
+      </ul>
+      <div class="tagrow">
+        <span class="tag">NLP (bases)</span><span class="tag">Text data</span><span class="tag">IA (initiation)</span>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+    <section id="experience">
+      <div class="section-title"><h2>Expérience</h2></div>
+
+      <div class="grid">
+        <div class="card pad col-12">
+          <b>Conseillère de vente — Darty</b>
+          <div class="small">Paris • 2023–2025 (à ajuster si besoin)</div>
+          <ul class="list">
+            <li>Analyse des besoins clients et recommandations adaptées</li>
+            <li>Résolution de problèmes et gestion de situations concrètes</li>
+            <li>Communication claire et orientée satisfaction</li>
+          </ul>
+          <div class="tagrow">
+            <span class="tag">Relation client</span><span class="tag">Business</span><span class="tag">Communication</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="formation">
+      <div class="section-title"><h2>Formation</h2></div>
+      <div class="grid">
+        <div class="card pad col-6">
+          <b>EFREI — Cycle ingénieur informatique</b>
+          <div class="muted">En cours</div>
+          <ul class="list">
+            <li>Informatique, programmation, bases de données, analyse</li>
+          </ul>
+        </div>
+        <div class="card pad col-6">
+          <b>Baccalauréat général</b>
+          <div class="muted">Spécialités : Mathématiques • Physique-Chimie</div>
+          <ul class="list">
+            <li>Base analytique et logique</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-title"><h2>Contact</h2><span class="small">Réponse rapide</span></div>
+      <div class="card pad">
+        <p class="muted" style="margin-top:0">
+          Dispo pour échanger : alternance (analyse de données). N’hésite pas à me contacter.
+        </p>
+        <div class="tagrow">
+          <span class="tag">Email : <b>niangnoemie@hotmail.com</b></span>
+          <span class="tag">LinkedIn : <b>Noémie Niang</b></span>
+          <span class="tag">GitHub : <b>noemien05</b></span>
+        </div>
+
+        <div class="cta" style="margin-top:14px">
+          <a class="btn primary" href="mailto:niangnoemie@hotmail.com?subject=Contact%20Portfolio%20-%20No%C3%A9mie">✉️ Envoyer un email</a>
+          <!-- Remplace les # -->
+          <a class="btn" href="https://www.linkedin.com/in/no%C3%A9mie-niang-234075291/" target="_blank" rel="noreferrer">in LinkedIn</a>
+          <a class="btn" href="https://github.com/noemien05" target="_blank" rel="noreferrer"><> GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>© <span id="y"></span> Noémie — Portfolio</span>
+      <span class="small">Dernière mise à jour : <span id="d"></span></span>
+    </footer>
+  </main>
+
+  <script>
+    const now = new Date();
+    document.getElementById("y").textContent = String(now.getFullYear());
+    document.getElementById("d").textContent = now.toLocaleDateString("fr-FR");
+  </script>
+</body>
+</html>
